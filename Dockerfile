@@ -42,6 +42,7 @@ COPY --from=build /opt/imgproxy/lib /opt/imgproxy/lib
 RUN ln -s /opt/imgproxy/bin/imgproxy /usr/local/bin/imgproxy
 
 COPY docker/entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 COPY docker/imgproxy-build-package /usr/local/bin/
 
