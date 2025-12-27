@@ -80,7 +80,7 @@ RUN groupadd -r imgproxy \
   && chmod 777 /var/cache/fontconfig
 USER 999
 
-ENTRYPOINT [ "entrypoint.sh" ]
+ENTRYPOINT [ "docker/entrypoint.sh" ]
 CMD ["imgproxy"]
 
 EXPOSE 7070
