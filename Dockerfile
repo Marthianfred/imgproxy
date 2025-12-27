@@ -79,11 +79,12 @@ RUN groupadd -r imgproxy \
   && useradd -r -u 999 -g imgproxy imgproxy \
   && mkdir -p /var/cache/fontconfig \
   && chmod 777 /var/cache/fontconfig
-USER 999
-
 RUN chmod +x /opt/imgproxy/bin/imgproxy
 
+USER 999
+
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
+
 CMD ["imgproxy"]
 
 EXPOSE 7070
